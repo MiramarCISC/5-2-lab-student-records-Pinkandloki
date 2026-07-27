@@ -40,7 +40,7 @@ double calculateAverageScore(const Student students[], int size) {
     // If the array is null or size is invalid, return 0.0.
     // Otherwise, return the average score.
     if (students == nullptr || size <= 0)
-    return 0.0;
+        return 0.0;
 
     double total = 0; 
 
@@ -53,14 +53,14 @@ return total / size;
 
 double findHighestScore(const Student students[], int size) {
   if (students == nullptr || size <= 0)
-return 0.0;
+    return 0.0;
 
 double highest = students[0].score;
 
-for (int i = 1; i < size; i++) {
-if (students[i].score > highest) {
-highest = students[i].score;
-}
+for (int i = 1; i < size; i++) { // skanakala: added indents for readability
+    if (students[i].score > highest) {
+        highest = students[i].score;
+    }
 }
 
 return highest;
@@ -89,14 +89,14 @@ char determineLetterGrade(double score) {
     // Return 'C' for scores 70 or higher.
     // Return 'D' for scores 60 or higher.
     // Return 'F' otherwise.
-    if (score >= 90)
+if (score >= A_MINIMUM) // skanakala: changed percentages to pre-defined constants
     return 'A'; 
-if (score >= 80)
-return 'B';
-if (score >= 70) 
-return 'C'; 
-if (score >= 60)
-return 'D'; 
+if (score >= B_MINIMUM)
+    return 'B';
+if (score >= C_MINIMUM) 
+    return 'C'; 
+if (score >= D_MINIMUM)
+    return 'D'; 
 
 return 'F';
 }
